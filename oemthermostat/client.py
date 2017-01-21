@@ -22,7 +22,7 @@ class Thermostat:
 
     """
 
-    def __init__(self, host, *, port=80, username=None, password=None):
+    def __init__(self, host, port=80, username=None, password=None):
         if username or password and not username and password:
             raise ValueError(
                 "Username and Password must both be specified, if either are specified."
