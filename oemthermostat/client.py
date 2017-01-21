@@ -154,5 +154,3 @@ class Thermostat:
         return self.post(
             "control/relay", params={'relay1': int(not self.state)})
 
-
-t = Thermostat("127.0.0.1", port=8080)
