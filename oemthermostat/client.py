@@ -116,7 +116,7 @@ class Thermostat:
     @property
     def mode(self):
         """
-        Returns the current mode of the termostat.
+        Returns the current mode of the thermostat.
 
         Returns
         -------
