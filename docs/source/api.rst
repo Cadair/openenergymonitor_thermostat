@@ -5,6 +5,9 @@ The following documents the HTTP API of the thermostat / relay device. This was
 discovered by reading the original source code for the ESP8266 and using the dev
 tools in Firefox to inspect the calls in the web interface.
 
+.. note::
+    This is incomplete, I will add more as I research it.
+
 .. http:get:: /control/thermostat.cgi?param=state
 
    Get the status of the thermostat.
