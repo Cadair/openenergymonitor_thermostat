@@ -1,3 +1,4 @@
+import sys
 import requests
 from requests.auth import HTTPBasicAuth
 
@@ -33,6 +34,12 @@ class Thermostat:
             self.auth = None
 
         self._base_url = "http://{}:{}/{{endpoint}}.cgi".format(host, port)
+        try:
+            r = requests.get(self._base_url.format(endpoint="index.html")[:-4])
+            assert r.status_code == 200
+        except Exception as e:
+            raise type(e)("Connection to Thermostat failed with: {}".format(str(e))
+                         ).with_traceback(sys.exc_info()[2])
 
     def _get_url(self, endpoint):
         return self._base_url.format(endpoint=endpoint)
@@ -153,4 +160,3 @@ class Thermostat:
         """
         return self.post(
             "control/relay", params={'relay1': int(not self.state)})
-
