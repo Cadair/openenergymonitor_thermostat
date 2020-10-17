@@ -1,4 +1,4 @@
-Copyright (c) 2016, Stuart Mumford
+Copyright (c) 2016-2020, Stuart Mumford
 
 All rights reserved.
 
