@@ -24,6 +24,10 @@ jobs:
 - template: run-tox-env.yml@OpenAstronomy
   parameters:
     envs:
+      - linux: py36
+        name: Linux_py36
+      - linux: py37
+        name: Linux_py37
       - linux: py38
         name: Linux_py38
 
@@ -37,3 +41,7 @@ jobs:
       targets:
         - sdist
         - wheels_universal
+      dependsOn:
+        - Linux_py36
+        - Linux_py37
+        - Linux_py38
