@@ -32,6 +32,8 @@ jobs:
     parameters:
       ${{ if startsWith(variables['Build.SourceBranch'], 'refs/tags/') }}:
         pypi_connection_name: 'PyPI'
+      test_extras: test
+      test_command: pytest --pyargs oemthermostat
       targets:
         - sdist
         - wheels_universal
